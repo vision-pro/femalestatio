@@ -19,7 +19,8 @@ function AppRoutes() {
         <Route path="/services/:slug" component={ServiceDetail} />
         <Route path="/doctors/:slug" component={DoctorDetail} />
         <Route path="/404" component={NotFound} />
-        <Route component={NotFound} />
+        {/* GitHub Pages serves the application shell for static fallback paths. */}
+        <Route component={Home} />
       </Switch>
     </WouterRouter>
   );
