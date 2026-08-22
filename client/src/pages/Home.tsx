@@ -30,6 +30,11 @@ const heroImage = assetUrl("/manus-storage/female-station-hero_657429cf.jpg");
 const spaImage = assetUrl("/manus-storage/female-station-spa_af829e4e.jpg");
 const consultationImage = assetUrl("/manus-storage/female-station-consultation_cfdeef04.jpg");
 const movementImage = assetUrl("/manus-storage/female-station-movement_2ac1ba66.jpg");
+const stationFacadeImage = assetUrl("/manus-storage/female-station-building_75344abc.jpg");
+const stationFacadeDetailImage = assetUrl("/manus-storage/female-station-building-detail_9ede8bf1.jpg");
+const stationGymImage = assetUrl("/manus-storage/female-station-building-alt_13cacb17.jpg");
+const injectionReel = assetUrl("/manus-storage/female-station-injection-reel_11af1452.mp4");
+const laserReel = assetUrl("/manus-storage/female-station-laser-reel_83507707.mp4");
 
 const faqs = [
   ["كيف أعرف القسم الأنسب لاحتياجي؟", "ابدئي بحجز موعد واختاري القسم الأقرب لاحتياجكِ. يراجع فريق محطة أنثى طلبكِ عبر واتساب ويساعدكِ في توجيه الحجز قبل تأكيده."],
@@ -66,6 +71,7 @@ export default function Home() {
             <a className="nav-link" href="#services">الأقسام</a>
             <a className="nav-link" href="#journey">تجربتكِ</a>
             <a className="nav-link" href="#team">الاختصاصيات</a>
+            <a className="nav-link" href="#journal">يوميات المحطة</a>
             <a className="nav-link" href="#faq">الأسئلة الشائعة</a>
             <a className="nav-link" href="#visit">زيارة المحطة</a>
           </nav>
@@ -86,7 +92,7 @@ export default function Home() {
             </div>
             <nav className="grid gap-1 text-right text-lg" aria-label="قائمة الجوال">
               {[
-                ["عن المحطة", "#about"], ["الأقسام", "#services"], ["تجربتكِ", "#journey"], ["الاختصاصيات", "#team"], ["الأسئلة", "#faq"], ["حجز موعد", "/booking"],
+                ["عن المحطة", "#about"], ["الأقسام", "#services"], ["تجربتكِ", "#journey"], ["الاختصاصيات", "#team"], ["يومياتنا", "#journal"], ["الأسئلة", "#faq"], ["حجز موعد", "/booking"],
               ].map(([label, href]) => (
                 <a key={href} href={href} onClick={closeMenu} className="rounded-2xl px-4 py-3 transition-colors hover:bg-[#F0E2DD]">{label}</a>
               ))}
@@ -192,7 +198,7 @@ export default function Home() {
           </div>
           <div className="py-4 lg:py-12">
             <div className="signature-motif motif-journey" aria-hidden="true"><span /><span /><span /><span /></div>
-            <p className="eyebrow"><span className="eyebrow-dot" /> كيف تبدأ التجربة؟</p>
+            <p className="eyebrow"><span className="eyebrow-dot" /> محطة 03 · كيف تبدأ التجربة؟</p>
             <h2 className="font-kufi mt-6 text-3xl font-bold leading-[1.6] tracking-[-0.06em] text-[#4A302D] sm:text-4xl">رعاية متكاملة،<br /><span className="text-[#BF7F74]">بطريقة أبسط.</span></h2>
             <div className="mt-10 border-t border-[#C98D82]/25">
               {[
@@ -226,7 +232,7 @@ export default function Home() {
         <div className="site-shell">
           <div className="signature-motif motif-team" aria-hidden="true"><span /><span /><span /><span /></div>
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
-            <div><p className="eyebrow"><span className="eyebrow-dot" /> فريق المحطة</p><h2 className="font-kufi mt-6 text-3xl font-bold leading-[1.55] tracking-[-0.06em] text-[#4A302D] sm:text-4xl">وجوه تثقين بها،<br /><span className="text-[#BF7F74]">عناية قريبة منكِ.</span></h2></div>
+            <div><p className="eyebrow"><span className="eyebrow-dot" /> محطة 04 · فريق المحطة</p><h2 className="font-kufi mt-6 text-3xl font-bold leading-[1.55] tracking-[-0.06em] text-[#4A302D] sm:text-4xl">وجوه تثقين بها،<br /><span className="text-[#BF7F74]">عناية قريبة منكِ.</span></h2></div>
             <p className="max-w-xl text-[15px] leading-8 text-[#735954] lg:mr-auto">تعرّفي إلى اختصاصيات محطة أنثى، واسألي عن القسم المناسب قبل زيارتكِ. الاستشارة الواضحة هي بداية الرحلة.</p>
           </div>
           <div className="mt-12 grid gap-px bg-[#D6B5AC] sm:grid-cols-2 lg:grid-cols-5">
@@ -252,11 +258,47 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="journal" className="journal-section relative overflow-hidden py-20 sm:py-28">
+        <div className="signature-motif motif-journal" aria-hidden="true"><span /><span /><span /><span /></div>
+        <div className="site-shell relative z-10">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+            <div>
+              <p className="eyebrow"><span className="eyebrow-dot" /> محطة 05 · من يومياتنا</p>
+              <h2 className="font-kufi mt-6 text-3xl font-bold leading-[1.6] tracking-[-0.06em] text-[#4A302D] sm:text-4xl">من المحطة،<br /><span className="text-[#BF7F74]">إلى يومكِ.</span></h2>
+            </div>
+            <p className="max-w-xl text-[15px] leading-8 text-[#735954] lg:mr-auto">لقطات منشورة من حساب محطة أنثى: مكانٌ صُمم ليجمع احتياجكِ، ومحتوى من داخل أقسام العناية والليزر.</p>
+          </div>
+
+          <div className="journal-image-grid mt-12">
+            <a href="https://www.instagram.com/p/DZ27aEFiKHI/" target="_blank" rel="noreferrer" className="journal-image-card journal-image-wide group">
+              <img src={stationFacadeDetailImage} alt="واجهة محطة أنثى في النجف كما تظهر في حسابها على إنستغرام" loading="lazy" />
+              <span className="journal-image-label"><small>منشور رسمي</small><strong>مكان واحد لكل نساء النجف</strong><Instagram className="h-4 w-4" /></span>
+            </a>
+            <a href="https://www.instagram.com/p/DZ27aEFiKHI/" target="_blank" rel="noreferrer" className="journal-image-card journal-image-square group">
+              <img src={stationGymImage} alt="مرافق الجيم النسائي المنشورة في حساب محطة أنثى" loading="lazy" />
+              <span className="journal-location">WOMEN'S GYM</span>
+              <span className="journal-station-mark">05</span>
+            </a>
+          </div>
+
+          <div className="journal-video-heading mt-16">
+            <div><span className="font-sans text-xs tracking-[0.22em] text-[#B8756B]">FROM INSTAGRAM REELS</span><h3 className="font-kufi mt-3 text-xl font-bold text-[#4A302D]">مشاهد من محتوى العناية المتخصص</h3></div>
+            <a href="https://www.instagram.com/femalestation.njf/reels/" target="_blank" rel="noreferrer" className="button-text">شاهدي كل الريلز <Instagram className="h-4 w-4" /></a>
+          </div>
+          <div className="journal-path" aria-label="مسار محطة المحتوى"><span><i>05</i> المكان</span><b /><span><i>06</i> المشاهدة</span></div>
+          <div className="journal-reels-grid mt-7">
+            <article className="reel-card"><div className="reel-card-label"><span>REEL 01</span><p>قسم الحقن والتجميل</p></div><video controls playsInline preload="metadata" poster={stationFacadeDetailImage} aria-label="ريل رسمي من حساب محطة أنثى عن الاستشارة التجميلية"><source src={injectionReel} type="video/mp4" />متصفحكِ لا يدعم تشغيل الفيديو.</video></article>
+            <article className="reel-card"><div className="reel-card-label"><span>REEL 02</span><p>قسم الليزر</p></div><video controls playsInline preload="metadata" poster={stationGymImage} aria-label="ريل رسمي من حساب محطة أنثى عن قسم الليزر"><source src={laserReel} type="video/mp4" />متصفحكِ لا يدعم تشغيل الفيديو.</video></article>
+          </div>
+          <p className="journal-note">المقاطع مضمنة مباشرةً من حساب <a href="https://www.instagram.com/femalestation.njf/" target="_blank" rel="noreferrer">@femalestation.njf</a> وتظل مملوكة لصاحب الحساب.</p>
+        </div>
+      </section>
+
       <section id="faq" className="faq-section relative py-20 sm:py-28">
         <div className="signature-motif motif-faq" aria-hidden="true"><span /><span /><span /><span /></div>
         <div className="site-shell relative z-10 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:gap-20">
           <div>
-            <p className="eyebrow"><span className="eyebrow-dot" /> محطة 04 · قبل زيارتكِ</p>
+            <p className="eyebrow"><span className="eyebrow-dot" /> محطة 06 · قبل زيارتكِ</p>
             <h2 className="font-kufi mt-6 text-3xl font-bold leading-[1.6] tracking-[-0.06em] text-[#4A302D] sm:text-4xl">إجابات واضحة،<br /><span className="text-[#BF7F74]">تمنحكِ راحة أكثر.</span></h2>
             <p className="mt-6 max-w-sm text-[15px] leading-8 text-[#725954]">جمعنا الأسئلة الأولى التي تساعدكِ على معرفة الخدمات، خطوات الحجز، وما الذي تتوقعينه قبل الزيارة.</p>
             <a href="/booking" className="button-text mt-8">لم تجدي ما تبحثين عنه؟ احجزي استفساركِ <SmallArrow /></a>
@@ -274,7 +316,7 @@ export default function Home() {
         <div className="site-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="border-l border-[#C98D82]/30 pl-0 lg:pl-14">
             <div className="signature-motif motif-visit" aria-hidden="true"><span /><span /><span /><span /></div>
-            <p className="eyebrow"><span className="eyebrow-dot" /> زيارة المحطة</p>
+            <p className="eyebrow"><span className="eyebrow-dot" /> محطة 07 · زيارة المحطة</p>
             <h2 className="font-kufi mt-6 text-3xl font-bold leading-[1.6] tracking-[-0.06em] text-[#4A302D] sm:text-4xl">محطتكِ أقرب<br /><span className="text-[#BF7F74]">مما تتخيلين.</span></h2>
             <p className="mt-6 max-w-md text-[15px] leading-8 text-[#725954]">نستقبلكِ في شارع الزهور، مجاور سويت تايم، النجف. تواصلي معنا وسنرشدكِ إلى القسم المناسب لزيارتكِ.</p>
             <div className="mt-9 grid gap-4 sm:grid-cols-2">

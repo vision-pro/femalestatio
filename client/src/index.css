@@ -137,6 +137,34 @@
   .faq-paper { position: relative; overflow: hidden; padding: 1.4rem 1.4rem .4rem; border-top: 4px solid #C98D82; background-color: #FFFDFB; background-image: linear-gradient(90deg, rgba(201,141,130,.035) 1px, transparent 1px), linear-gradient(rgba(201,141,130,.035) 1px, transparent 1px); background-size: 22px 22px; box-shadow: 0 18px 38px rgba(104,65,58,.08); }
   .faq-label { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: .9rem; border-bottom: 1px solid rgba(201,141,130,.3); font-family: "Noto Kufi Arabic", sans-serif; font-size: 10px; color: #9A716A; }
   .faq-number { display: grid; place-items: center; width: 26px; height: 26px; flex: 0 0 auto; border: 1px solid #D4A49A; border-radius: 50%; font-family: "DM Sans", sans-serif; font-style: normal; font-size: 9px; font-weight: 500; color: #B8756B; }
+  .journal-section { background-color: #FCF8F5; background-image: radial-gradient(circle at 12% 18%, rgba(226,191,180,.26), transparent 18%), radial-gradient(circle at 87% 74%, rgba(220,195,179,.22), transparent 24%), linear-gradient(90deg, rgba(201,141,130,.035) 1px, transparent 1px); background-size: auto, auto, 24px 24px; }
+  .motif-journal { top: 2.5rem; left: 6%; color: #B8756B; opacity: .45; transform: rotate(-12deg); }
+  .journal-image-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  .journal-image-card { position: relative; display: block; overflow: hidden; min-height: 310px; background: #C98D82; }
+  .journal-image-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s cubic-bezier(.23,1,.32,1), filter .45s cubic-bezier(.23,1,.32,1); }
+  .journal-image-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(57,37,35,.55) 100%); pointer-events: none; }
+  .journal-image-card:hover img { transform: scale(1.035); filter: saturate(.88); }
+  .journal-image-wide { border-radius: 58px 4px 4px 4px; }
+  .journal-image-square { border-radius: 4px 4px 58px 4px; min-height: 250px; }
+  .journal-image-label { position: absolute; z-index: 2; right: 1.25rem; left: 1.25rem; bottom: 1.15rem; display: flex; align-items: end; gap: .55rem; color: white; }
+  .journal-image-label small { display: block; margin-bottom: .35rem; font-family: "Noto Kufi Arabic", sans-serif; font-size: 9px; color: #F3C9C0; }
+  .journal-image-label strong { font-family: "Noto Kufi Arabic", sans-serif; font-size: 13px; line-height: 1.7; }
+  .journal-image-label svg { margin-right: auto; flex: 0 0 auto; }
+  .journal-location { position: absolute; z-index: 2; top: 1rem; right: 1rem; padding: .35rem .55rem; border: 1px solid rgba(255,255,255,.5); color: white; background: rgba(57,37,35,.38); font-family: "DM Sans", sans-serif; font-size: 8px; letter-spacing: .18em; }
+  .journal-station-mark { position: absolute; z-index: 2; left: 1rem; bottom: 1rem; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); color: white; background: rgba(57,37,35,.34); font-family: "DM Sans", sans-serif; font-size: 11px; }
+  .journal-video-heading { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; padding-top: 1.5rem; border-top: 1px solid rgba(201,141,130,.28); }
+  .journal-path { display: flex; align-items: center; gap: .7rem; margin-top: 1.25rem; color: #7D5953; font-family: "Noto Kufi Arabic", sans-serif; font-size: 10px; }
+  .journal-path span { display: inline-flex; align-items: center; gap: .45rem; }
+  .journal-path i { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid #C98D82; border-radius: 50%; color: #B8756B; font-family: "DM Sans", sans-serif; font-size: 9px; font-style: normal; }
+  .journal-path b { width: clamp(40px, 9vw, 130px); height: 1px; background: linear-gradient(90deg, #C98D82, rgba(201,141,130,.15)); }
+  .journal-reels-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+  .reel-card { overflow: hidden; border: 1px solid #DABEB6; background: #F3E2DC; box-shadow: 0 15px 28px rgba(102,63,57,.08); }
+  .reel-card-label { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem .85rem; border-bottom: 1px solid #DABEB6; background: #FFF9F5; }
+  .reel-card-label span { font-family: "DM Sans", sans-serif; font-size: 9px; letter-spacing: .17em; color: #B8756B; }
+  .reel-card-label p { font-family: "Noto Kufi Arabic", sans-serif; font-size: 10px; color: #674842; }
+  .reel-card video { display: block; width: 100%; min-height: 540px; max-height: 640px; object-fit: cover; background: #241817; }
+  .journal-note { margin-top: 1rem; font-family: "Noto Kufi Arabic", sans-serif; font-size: 10px; line-height: 2; color: #876862; }
+  .journal-note a { color: #A6655B; text-decoration: underline; text-underline-offset: 3px; }
   .info-card { display: flex; min-height: 84px; align-items: center; gap: .7rem; padding: 1rem; border: 1px solid #DABEB6; background: #fffaf7; color: #724C47; transition: transform 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1); }
   .info-card:hover { transform: translateY(-3px); box-shadow: 0 14px 25px rgba(109,71,66,.10); }
   .info-card span { display: grid; gap: .2rem; }
@@ -144,7 +172,7 @@
   .info-card strong { font-family: "DM Sans", "Noto Kufi Arabic", sans-serif; font-size: 12px; font-weight: 600; }
 }
 
-@media (min-width: 640px) { .site-shell { padding-inline: 2rem; } .booking-sheet { padding: 2.4rem; } .booking-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } .service-hero-image, .doctor-hero-image { height: 275px; } .calendar-selection, .time-selection { padding: 1.3rem; } .slot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .faq-paper { padding: 1.8rem 2rem .7rem; } }
+@media (min-width: 640px) { .site-shell { padding-inline: 2rem; } .booking-sheet { padding: 2.4rem; } .booking-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } .service-hero-image, .doctor-hero-image { height: 275px; } .calendar-selection, .time-selection { padding: 1.3rem; } .slot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .faq-paper { padding: 1.8rem 2rem .7rem; } .journal-image-grid { grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr); } .journal-image-wide { min-height: 510px; } .journal-image-square { min-height: 510px; } .journal-video-heading { flex-direction: row; align-items: end; justify-content: space-between; } .journal-reels-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .site-shell { padding-inline: 3rem; } }
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy > *, .hero-media, #about > *, #services > *, #journey > * { animation: rise-in .65s cubic-bezier(.23,1,.32,1) both; }
