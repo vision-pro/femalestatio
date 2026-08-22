@@ -76,6 +76,48 @@
   .station-number i { position: absolute; width: 15px; height: 15px; border: 1px solid #C98D82; border-radius: 5px 0 5px 0; transform: rotate(45deg); opacity: 0; transition: opacity .2s; }
   .station-item:hover .station-number i { opacity: 1; }
   .station-tag { display: inline-flex; align-items: center; gap: .4rem; font-size: 9px; letter-spacing: .18em; color: #E8B7AE; opacity: .7; }
+  .page-hero { position: relative; overflow: hidden; padding-block: 4.5rem 5rem; background: linear-gradient(115deg, #FBF7F3 10%, #F0E0DB 100%); }
+  .page-hero-dark { background: #3B2826; color: #fff; }
+  .motif-page { top: 2rem; left: 7%; color: #C98D82; opacity: .62; }
+  .motif-page-light { top: 2rem; left: 7%; color: #E8B7AE; opacity: .55; }
+  .back-link { display: inline-flex; align-items: center; gap: .45rem; font-family: "Noto Kufi Arabic", sans-serif; font-size: 11px; color: #775650; transition: color 180ms cubic-bezier(.23,1,.32,1); }
+  .back-link:hover { color: #BF7F74; }
+  .back-link-light { color: #F0D7D1; }
+  .back-link-light:hover { color: #fff; }
+  .booking-sheet { position: relative; padding: 1.5rem; overflow: hidden; background-color: #FFFDFB; background-image: linear-gradient(90deg, rgba(201,141,130,.035) 1px, transparent 1px), linear-gradient(rgba(201,141,130,.035) 1px, transparent 1px); background-size: 24px 24px; box-shadow: 0 20px 45px rgba(97,60,54,.09); border-top: 5px solid #C98D82; }
+  .booking-step { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #C98D82; border-radius: 50%; font-family: "DM Sans", sans-serif; font-size: 11px; color: #BF7F74; }
+  .booking-aside, .service-cta, .professional-card { position: relative; padding: 1.6rem; overflow: hidden; background: #F0E0DB; border: 1px solid rgba(201,141,130,.35); }
+  .booking-aside-image { min-height: 100%; background-size: cover; background-position: center; box-shadow: inset 0 0 0 1px rgba(255,255,255,.4); }
+  .motif-aside { left: -18px; bottom: -20px; color: #9E655B; opacity: .5; transform: rotate(12deg); }
+  .motif-form { top: 1rem; left: 1.4rem; color: #C98D82; opacity: .16; }
+  .booking-form { display: grid; grid-template-columns: 1fr; gap: 1.15rem; }
+  .booking-form label { display: grid; gap: .55rem; font-family: "Noto Kufi Arabic", sans-serif; font-size: 11px; font-weight: 700; color: #5C3E39; }
+  .booking-form input, .booking-form select, .booking-form textarea { width: 100%; border: 1px solid #DDC4BD; background: #FFFDFB; padding: .8rem .9rem; font-family: "Noto Kufi Arabic", sans-serif; font-size: 12px; font-weight: 400; color: #4B302D; transition: border-color 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1); }
+  .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus { border-color: #C98D82; outline: none; box-shadow: 0 0 0 3px rgba(201,141,130,.18); }
+  .booking-form textarea { resize: vertical; }
+  .booking-wide, .booking-submit, .booking-error { grid-column: 1 / -1; }
+  .booking-submit { justify-self: start; }
+  .booking-error { border-right: 3px solid #B8756B; background: #F9E6E2; padding: .75rem .85rem; font-family: "Noto Kufi Arabic", sans-serif; font-size: 11px; color: #804741; }
+  .empty-page { min-height: 55vh; padding-block: 7rem; }
+  .service-cta { align-self: start; border-top: 4px solid #C98D82; background-image: linear-gradient(145deg, rgba(255,255,255,.7), rgba(240,224,219,.45)); }
+  .motif-cta { left: -20px; bottom: -20px; color: #B8756B; opacity: .34; transform: rotate(11deg); }
+  .service-hero-image { position: relative; height: 210px; overflow: hidden; border: 1px solid rgba(232,183,174,.45); border-radius: 48px 4px 4px 4px; }
+  .service-hero-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.68) contrast(.92); }
+  .service-hero-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(59,40,38,.1), rgba(59,40,38,.52)); }
+  .service-image-seal { position: absolute; z-index: 2; left: 1rem; bottom: 1rem; display: grid; justify-items: center; width: 55px; height: 55px; padding-top: .45rem; border: 1px solid rgba(255,255,255,.65); color: #fff; font-family: "DM Sans", sans-serif; font-size: 7px; letter-spacing: .14em; background: rgba(59,40,38,.4); backdrop-filter: blur(5px); }
+  .service-image-seal strong { font-size: 17px; line-height: 1; }
+  .service-divider { display: flex; align-items: center; gap: .7rem; color: #B8756B; font-family: "Noto Kufi Arabic", sans-serif; font-size: 10px; }
+  .service-divider i { flex: 1; height: 1px; background: linear-gradient(90deg, #C98D82, transparent); }
+  .data-pending { display: flex; gap: .75rem; border: 1px solid #E5C7C0; background: #FFF7F4; padding: 1rem; font-family: "Noto Kufi Arabic", sans-serif; font-size: 11px; line-height: 1.9; color: #725750; }
+  .doctor-seal { display: flex; align-items: center; gap: .5rem; padding: .65rem .8rem; border: 1px solid #C98D82; color: #A86D62; font-family: "DM Sans", sans-serif; font-size: 8px; letter-spacing: .14em; line-height: 1.3; }
+  .professional-card { background-color: #F5E6E1; background-image: linear-gradient(135deg, rgba(255,255,255,.65), rgba(201,141,130,.06)); }
+  .motif-profile { left: -24px; top: -18px; color: #B8756B; opacity: .34; transform: rotate(-10deg); }
+  .doctor-hero-image { position: relative; height: 205px; overflow: hidden; border-radius: 52px 3px 3px 3px; border: 1px solid rgba(201,141,130,.35); }
+  .doctor-hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.62) contrast(.94); }
+  .doctor-hero-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent, rgba(70,45,42,.35)); }
+  .doctor-hero-image span { position: absolute; z-index: 2; left: 1rem; bottom: 1rem; border: 1px solid rgba(255,255,255,.65); padding: .35rem .5rem; color: white; font-family: "DM Sans", sans-serif; font-size: 8px; letter-spacing: .16em; line-height: 1.2; }
+  .doctor-link { padding: .7rem 1rem; border: 1px solid #DABEB6; font-family: "Noto Kufi Arabic", sans-serif; font-size: 11px; color: #664843; transition: background 180ms cubic-bezier(.23,1,.32,1), transform 180ms cubic-bezier(.23,1,.32,1); }
+  .doctor-link:hover { background: #EED8D2; transform: translateY(-2px); }
   .info-card { display: flex; min-height: 84px; align-items: center; gap: .7rem; padding: 1rem; border: 1px solid #DABEB6; background: #fffaf7; color: #724C47; transition: transform 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1); }
   .info-card:hover { transform: translateY(-3px); box-shadow: 0 14px 25px rgba(109,71,66,.10); }
   .info-card span { display: grid; gap: .2rem; }
@@ -83,7 +125,7 @@
   .info-card strong { font-family: "DM Sans", "Noto Kufi Arabic", sans-serif; font-size: 12px; font-weight: 600; }
 }
 
-@media (min-width: 640px) { .site-shell { padding-inline: 2rem; } }
+@media (min-width: 640px) { .site-shell { padding-inline: 2rem; } .booking-sheet { padding: 2.4rem; } .booking-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } .service-hero-image, .doctor-hero-image { height: 275px; } }
 @media (min-width: 1024px) { .site-shell { padding-inline: 3rem; } }
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy > *, .hero-media, #about > *, #services > *, #journey > * { animation: rise-in .65s cubic-bezier(.23,1,.32,1) both; }

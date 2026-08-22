@@ -14,7 +14,6 @@ import {
   MapPin,
   Menu,
   MessageCircle,
-  Pill,
   Scissors,
   ShieldCheck,
   Sparkles,
@@ -22,6 +21,7 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
+import { doctors as team, services } from "@/lib/siteData";
 
 const brandLogo = "/manus-storage/female-station-original-logo_a2c4944b.jpg";
 const brandMark = "/manus-storage/female-station-mark_3be10351.png";
@@ -29,23 +29,6 @@ const heroImage = "/manus-storage/female-station-hero_657429cf.jpg";
 const spaImage = "/manus-storage/female-station-spa_af829e4e.jpg";
 const consultationImage = "/manus-storage/female-station-consultation_cfdeef04.jpg";
 const movementImage = "/manus-storage/female-station-movement_2ac1ba66.jpg";
-
-const services = [
-  { number: "01", title: "العناية والجلدية", copy: "استشارة دقيقة ومسار عناية يناسب احتياج بشرتكِ.", icon: Sparkles },
-  { number: "02", title: "السبا والصالون", copy: "لحظات هادئة لاستعادة توازنكِ وجمالكِ الطبيعي.", icon: Scissors },
-  { number: "03", title: "الجيم النسائي", copy: "مساحة حركة خاصة تمنحكِ طاقة تشبهكِ.", icon: Dumbbell },
-  { number: "04", title: "النسائية والتجميل", copy: "رعاية متخصصة في بيئة تضع راحتكِ أولاً.", icon: HeartPulse },
-  { number: "05", title: "المختبر والصيدلية", copy: "خدمات مساندة تجعل رحلتكِ أكثر سهولة وتكاملاً.", icon: FlaskConical },
-  { number: "06", title: "الليزر والحقن", copy: "خيارات تجميلية تُناقش بعناية بعد تقييم مناسب.", icon: Stethoscope },
-];
-
-const team = [
-  "د. مريم صدام",
-  "د. حنين السعبري",
-  "د. أساور العارضي",
-  "د. مريم الوائلي",
-  "د. نجلاء البياتي",
-];
 
 function SmallArrow() {
   return <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />;
@@ -76,10 +59,7 @@ export default function Home() {
             <a className="nav-link" href="#visit">زيارة المحطة</a>
           </nav>
 
-          <a href="tel:+9647833000894" className="button-primary hidden sm:inline-flex">
-            تواصلي معنا
-            <SmallArrow />
-          </a>
+          <a href="/booking" className="button-primary hidden sm:inline-flex">احجزي موعداً <MessageCircle className="h-4 w-4" /></a>
           <button className="grid h-10 w-10 place-items-center rounded-full bg-[#EEDBD5] text-[#6B423D] lg:hidden" onClick={() => setOpenMenu(true)} aria-label="فتح القائمة">
             <Menu className="h-5 w-5" />
           </button>
@@ -95,7 +75,7 @@ export default function Home() {
             </div>
             <nav className="grid gap-1 text-right text-lg" aria-label="قائمة الجوال">
               {[
-                ["عن المحطة", "#about"], ["الأقسام", "#services"], ["تجربتكِ", "#journey"], ["الاختصاصيات", "#team"], ["زيارة المحطة", "#visit"],
+                ["عن المحطة", "#about"], ["الأقسام", "#services"], ["تجربتكِ", "#journey"], ["الاختصاصيات", "#team"], ["حجز موعد", "/booking"],
               ].map(([label, href]) => (
                 <a key={href} href={href} onClick={closeMenu} className="rounded-2xl px-4 py-3 transition-colors hover:bg-[#F0E2DD]">{label}</a>
               ))}
@@ -118,7 +98,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href="#visit" className="button-primary">اكتشفي المحطة <SmallArrow /></a>
+              <a href="/booking" className="button-primary">احجزي موعدكِ <MessageCircle className="h-4 w-4" /></a>
               <a href="#services" className="button-text">تعرّفي إلى الأقسام <ChevronDown className="h-4 w-4" /></a>
             </div>
           </div>
@@ -176,14 +156,14 @@ export default function Home() {
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <article key={service.number} className="station-item group">
+                <a key={service.number} href={`/services/${service.slug}`} className="station-item group">
                   <div className="station-number"><span className="font-sans">{service.number}</span><i /></div>
                   <div className="station-content">
                     <div className="flex items-center justify-between gap-4"><h3 className="font-kufi text-xl font-bold tracking-[-0.05em] sm:text-2xl">{service.title}</h3><Icon className="h-4 w-4 shrink-0 text-[#E6B6AE] transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" aria-hidden="true" /></div>
                     <p className="mt-3 max-w-[430px] text-sm leading-7 text-[#DDCCC6]">{service.copy}</p>
                   </div>
                   <div className="station-tag"><span className="font-sans">STATION</span><ChevronLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" /></div>
-                </article>
+                </a>
               );
             })}
           </div>
@@ -239,13 +219,13 @@ export default function Home() {
             <p className="max-w-xl text-[15px] leading-8 text-[#735954] lg:mr-auto">تعرّفي إلى اختصاصيات محطة أنثى، واسألي عن القسم المناسب قبل زيارتكِ. الاستشارة الواضحة هي بداية الرحلة.</p>
           </div>
           <div className="mt-12 grid gap-px bg-[#D6B5AC] sm:grid-cols-2 lg:grid-cols-5">
-            {team.map((name, index) => (
-              <article key={name} className="group min-h-[188px] bg-[#FBF7F3] p-6 transition-colors duration-300 hover:bg-[#F0E0DB]">
+            {team.map((doctor, index) => (
+              <a href={`/doctors/${doctor.slug}`} key={doctor.slug} className="group min-h-[188px] bg-[#FBF7F3] p-6 transition-colors duration-300 hover:bg-[#F0E0DB]">
                 <span className="font-sans text-xs tracking-[0.16em] text-[#BF7F74]">0{index + 1}</span>
                 <div className="mt-11 flex h-11 w-11 items-center justify-center rounded-full bg-[#E3C2BA] text-[#6B423D] transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110"><ShieldCheck className="h-5 w-5" /></div>
-                <h3 className="font-kufi mt-4 text-[14px] font-bold tracking-[-0.04em] text-[#4A302D]">{name}</h3>
-                <p className="mt-2 text-xs text-[#8B6D67]">ضمن فريق محطة أنثى</p>
-              </article>
+                <h3 className="font-kufi mt-4 text-[14px] font-bold tracking-[-0.04em] text-[#4A302D]">{doctor.name}</h3>
+                <p className="mt-2 text-xs text-[#8B6D67]">اعرفي المزيد <ChevronLeft className="mr-1 inline h-3 w-3" /></p>
+              </a>
             ))}
           </div>
         </div>
