@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { doctors as team, services } from "@/lib/siteData";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const brandLogo = "/manus-storage/female-station-original-logo_a2c4944b.jpg";
 const brandMark = "/manus-storage/female-station-mark_3be10351.png";
@@ -29,6 +30,15 @@ const heroImage = "/manus-storage/female-station-hero_657429cf.jpg";
 const spaImage = "/manus-storage/female-station-spa_af829e4e.jpg";
 const consultationImage = "/manus-storage/female-station-consultation_cfdeef04.jpg";
 const movementImage = "/manus-storage/female-station-movement_2ac1ba66.jpg";
+
+const faqs = [
+  ["كيف أعرف القسم الأنسب لاحتياجي؟", "ابدئي بحجز موعد واختاري القسم الأقرب لاحتياجكِ. يراجع فريق محطة أنثى طلبكِ عبر واتساب ويساعدكِ في توجيه الحجز قبل تأكيده."],
+  ["هل أحتاج إلى استشارة قبل خدمات الليزر أو الحقن؟", "تختلف الحاجة والخيار المناسب من حالة إلى أخرى. لذلك يبدأ قسم الليزر والحقن بتقييم واستشارة قبل اختيار الخدمة أو الإجراء."],
+  ["ما الخدمات التي أجدها في محطة أنثى؟", "تضم المحطة الجيم النسائي، الجلدية والعناية، النسائية والتجميل، السبا والصالون، المختبر والصيدلية، إضافة إلى الليزر والحقن التجميلي."],
+  ["هل الموعد عبر الموقع مؤكد مباشرة؟", "لا. يفتح نموذج الحجز رسالة واتساب تحتوي تفاصيلكِ وتاريخكِ ووقتكِ المفضلين، ثم يؤكد الفريق التوفر والموعد النهائي معكِ."],
+  ["هل تحفظون بيانات الحجز داخل الموقع؟", "لا يحفظ الموقع البيانات. تُفتح رسالة منظمة في واتساب فقط لكي يتابع فريق المحطة طلبكِ مباشرة."],
+  ["هل يمكنني اختيار اختصاصية مفضلة؟", "نعم. يمكنكِ اختيار الاسم المفضل في نموذج الحجز، ويؤكد الفريق إمكانية الحجز وفق الجدول والمعلومات المعتمدة."],
+];
 
 function SmallArrow() {
   return <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />;
@@ -56,6 +66,7 @@ export default function Home() {
             <a className="nav-link" href="#services">الأقسام</a>
             <a className="nav-link" href="#journey">تجربتكِ</a>
             <a className="nav-link" href="#team">الاختصاصيات</a>
+            <a className="nav-link" href="#faq">الأسئلة الشائعة</a>
             <a className="nav-link" href="#visit">زيارة المحطة</a>
           </nav>
 
@@ -75,7 +86,7 @@ export default function Home() {
             </div>
             <nav className="grid gap-1 text-right text-lg" aria-label="قائمة الجوال">
               {[
-                ["عن المحطة", "#about"], ["الأقسام", "#services"], ["تجربتكِ", "#journey"], ["الاختصاصيات", "#team"], ["حجز موعد", "/booking"],
+                ["عن المحطة", "#about"], ["الأقسام", "#services"], ["تجربتكِ", "#journey"], ["الاختصاصيات", "#team"], ["الأسئلة", "#faq"], ["حجز موعد", "/booking"],
               ].map(([label, href]) => (
                 <a key={href} href={href} onClick={closeMenu} className="rounded-2xl px-4 py-3 transition-colors hover:bg-[#F0E2DD]">{label}</a>
               ))}
@@ -238,6 +249,24 @@ export default function Home() {
           <h2 className="font-kufi mt-7 max-w-3xl text-3xl font-bold leading-[1.65] tracking-[-0.065em] sm:text-4xl lg:text-[45px]">امنحي نفسكِ الوقت<br /><span className="text-[#F0BEB5]">الذي تستحقه.</span></h2>
           <p className="mt-6 max-w-xl text-[15px] leading-8 text-[#F4E2DE]">الراحة ليست تفصيلاً جانبياً. في محطة أنثى، نمنحها مكاناً حقيقياً في يومكِ.</p>
           <a href="https://www.instagram.com/femalestation.njf/" target="_blank" rel="noreferrer" className="button-cream mt-9">شاهدي يوميات المحطة <Instagram className="h-4 w-4" /></a>
+        </div>
+      </section>
+
+      <section id="faq" className="faq-section relative py-20 sm:py-28">
+        <div className="signature-motif motif-faq" aria-hidden="true"><span /><span /><span /><span /></div>
+        <div className="site-shell relative z-10 grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:gap-20">
+          <div>
+            <p className="eyebrow"><span className="eyebrow-dot" /> محطة 04 · قبل زيارتكِ</p>
+            <h2 className="font-kufi mt-6 text-3xl font-bold leading-[1.6] tracking-[-0.06em] text-[#4A302D] sm:text-4xl">إجابات واضحة،<br /><span className="text-[#BF7F74]">تمنحكِ راحة أكثر.</span></h2>
+            <p className="mt-6 max-w-sm text-[15px] leading-8 text-[#725954]">جمعنا الأسئلة الأولى التي تساعدكِ على معرفة الخدمات، خطوات الحجز، وما الذي تتوقعينه قبل الزيارة.</p>
+            <a href="/booking" className="button-text mt-8">لم تجدي ما تبحثين عنه؟ احجزي استفساركِ <SmallArrow /></a>
+          </div>
+          <div className="faq-paper">
+            <div className="faq-label"><span className="font-sans text-xs tracking-[0.22em] text-[#B8756B]">FEMALE STATION · FAQ</span><span>مسار معلوماتكِ</span></div>
+            <Accordion type="single" collapsible className="mt-4">
+              {faqs.map(([question, answer], index) => <AccordionItem key={question} value={`faq-${index}`} className="border-[#C98D82]/25"><AccordionTrigger className="font-kufi py-6 text-right text-[13px] font-bold leading-7 no-underline hover:no-underline"><span className="flex items-center gap-3"><i className="faq-number">0{index + 1}</i>{question}</span></AccordionTrigger><AccordionContent className="pr-10 text-right text-sm leading-8 text-[#715650]">{answer}</AccordionContent></AccordionItem>)}
+            </Accordion>
+          </div>
         </div>
       </section>
 
