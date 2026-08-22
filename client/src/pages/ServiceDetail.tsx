@@ -4,15 +4,15 @@
 import { ArrowLeft, Check, MessageCircle, MoveLeft } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import SiteChrome from "@/components/SiteChrome";
-import { getService, services } from "@/lib/siteData";
+import { assetUrl, getService, services } from "@/lib/siteData";
 
 const serviceImages: Record<string, string> = {
-  "skin-care": "/manus-storage/female-station-consultation_cfdeef04.jpg",
-  "spa-salon": "/manus-storage/female-station-spa_af829e4e.jpg",
-  "women-gym": "/manus-storage/female-station-movement_2ac1ba66.jpg",
-  "womens-care": "/manus-storage/female-station-consultation_cfdeef04.jpg",
-  "lab-pharmacy": "/manus-storage/female-station-spa_af829e4e.jpg",
-  "laser-injections": "/manus-storage/female-station-consultation_cfdeef04.jpg",
+  "skin-care": assetUrl("/manus-storage/female-station-consultation_cfdeef04.jpg"),
+  "spa-salon": assetUrl("/manus-storage/female-station-spa_af829e4e.jpg"),
+  "women-gym": assetUrl("/manus-storage/female-station-movement_2ac1ba66.jpg"),
+  "womens-care": assetUrl("/manus-storage/female-station-consultation_cfdeef04.jpg"),
+  "lab-pharmacy": assetUrl("/manus-storage/female-station-spa_af829e4e.jpg"),
+  "laser-injections": assetUrl("/manus-storage/female-station-consultation_cfdeef04.jpg"),
 };
 
 export default function ServiceDetail() {

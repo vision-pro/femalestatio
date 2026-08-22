@@ -21,15 +21,15 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
-import { doctors as team, services } from "@/lib/siteData";
+import { assetUrl, doctors as team, services } from "@/lib/siteData";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const brandLogo = "/manus-storage/female-station-original-logo_a2c4944b.jpg";
-const brandMark = "/manus-storage/female-station-mark_3be10351.png";
-const heroImage = "/manus-storage/female-station-hero_657429cf.jpg";
-const spaImage = "/manus-storage/female-station-spa_af829e4e.jpg";
-const consultationImage = "/manus-storage/female-station-consultation_cfdeef04.jpg";
-const movementImage = "/manus-storage/female-station-movement_2ac1ba66.jpg";
+const brandLogo = assetUrl("/manus-storage/female-station-original-logo_a2c4944b.jpg");
+const brandMark = assetUrl("/manus-storage/female-station-mark_3be10351.png");
+const heroImage = assetUrl("/manus-storage/female-station-hero_657429cf.jpg");
+const spaImage = assetUrl("/manus-storage/female-station-spa_af829e4e.jpg");
+const consultationImage = assetUrl("/manus-storage/female-station-consultation_cfdeef04.jpg");
+const movementImage = assetUrl("/manus-storage/female-station-movement_2ac1ba66.jpg");
 
 const faqs = [
   ["كيف أعرف القسم الأنسب لاحتياجي؟", "ابدئي بحجز موعد واختاري القسم الأقرب لاحتياجكِ. يراجع فريق محطة أنثى طلبكِ عبر واتساب ويساعدكِ في توجيه الحجز قبل تأكيده."],

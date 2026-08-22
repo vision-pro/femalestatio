@@ -4,9 +4,9 @@
 import { ArrowLeft, BadgeCheck, CalendarCheck2, MessageCircle, ShieldAlert } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import SiteChrome from "@/components/SiteChrome";
-import { doctors, getDoctor } from "@/lib/siteData";
+import { assetUrl, doctors, getDoctor } from "@/lib/siteData";
 
-const consultationImage = "/manus-storage/female-station-consultation_cfdeef04.jpg";
+const consultationImage = assetUrl("/manus-storage/female-station-consultation_cfdeef04.jpg");
 
 export default function DoctorDetail() {
   const [, params] = useRoute("/doctors/:slug");

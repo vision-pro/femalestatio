@@ -6,6 +6,8 @@ import type { LucideIcon } from "lucide-react";
 import { Dumbbell, FlaskConical, HeartPulse, Scissors, Sparkles, Stethoscope } from "lucide-react";
 
 export const WHATSAPP_NUMBER = "9647833000894";
+const manuscriptAssetHost = import.meta.env.BASE_URL === "/femalestatio/" ? "https://femalestatio-sjsxpdug.manus.space" : "";
+export const assetUrl = (storagePath: string) => `${manuscriptAssetHost}${storagePath}`;
 
 export type Service = {
   slug: string;

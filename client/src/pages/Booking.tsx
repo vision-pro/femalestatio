@@ -6,9 +6,9 @@ import { FormEvent, useState } from "react";
 import { Link } from "wouter";
 import SiteChrome from "@/components/SiteChrome";
 import { Calendar } from "@/components/ui/calendar";
-import { doctors, services, WHATSAPP_NUMBER } from "@/lib/siteData";
+import { assetUrl, doctors, services, WHATSAPP_NUMBER } from "@/lib/siteData";
 
-const spaImage = "/manus-storage/female-station-spa_af829e4e.jpg";
+const spaImage = assetUrl("/manus-storage/female-station-spa_af829e4e.jpg");
 
 type BookingForm = { name: string; phone: string; service: string; doctor: string; time: string; note: string };
 const initialForm: BookingForm = { name: "", phone: "", service: "", doctor: "", time: "", note: "" };

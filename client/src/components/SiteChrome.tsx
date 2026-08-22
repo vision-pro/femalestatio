@@ -4,10 +4,10 @@
 import { Instagram, Menu, MessageCircle, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Link } from "wouter";
-import { WHATSAPP_NUMBER } from "@/lib/siteData";
+import { assetUrl, WHATSAPP_NUMBER } from "@/lib/siteData";
 
-const brandLogo = "/manus-storage/female-station-original-logo_a2c4944b.jpg";
-const brandMark = "/manus-storage/female-station-mark_3be10351.png";
+const brandLogo = assetUrl("/manus-storage/female-station-original-logo_a2c4944b.jpg");
+const brandMark = assetUrl("/manus-storage/female-station-mark_3be10351.png");
 
 export default function SiteChrome({ children }: { children: ReactNode }) {
   const [openMenu, setOpenMenu] = useState(false);
